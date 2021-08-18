@@ -1,0 +1,36 @@
+{% extends "blogs/base.html" %}
+
+{% block page_header %}
+  <h1>Posty</h1>
+{% endblock page_header %}
+
+
+{% block content %}
+<div class="pb-2 mb-2">
+  <a href="{% url 'blogs:new_post'%}">Dodaj nowy post</a>
+</div>
+
+  <ul>
+      {% for post in posts %}
+        <li>
+            <div class="card mb-3 pb-2">
+                <h4>
+            <!--<a href="{% url 'blogs:posts' post.id}">{{post}}</a>-->
+            <div class="pb-2 mb-2 border-bottom bg-light">
+                {{post}}
+                <small>{{post.date_added|date:'d M Y H:i'}}</small>
+            </div>
+            
+                </h4>
+                  <a href="{% url 'blogs:edit_post' post.id %}">Edytuj wpis</a>
+                  <p>{{post.text}}</p>
+            </div>
+        </li>
+          
+      {% empty %}
+        <li>Nie ma żadnych posttttow </li>
+      {% endfor %}
+  </ul>
+
+
+{% endblock content %}
