@@ -1,4 +1,8 @@
 blog_env/
 __pycache__
 *.sqlite3
+<<<<<<< HEAD
 *.PNG
+=======
+*.PNG
+>>>>>>> 0e6ae621be575682e19ce9663a80910ad3d4521b
